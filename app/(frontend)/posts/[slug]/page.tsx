@@ -29,7 +29,7 @@ export default async function Page({ params }: PostIndexProps) {
 						.quality(80)
 						.auto("format")
 						.url()}
-					alt={post?.mainImage?.alt || ""}
+					alt={post?.mainImage?.alt || "Blog Post Image"}
 					width="800"
 					height="300"
 				/>

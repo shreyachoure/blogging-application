@@ -456,7 +456,7 @@
               },
               "optional": true
             },
-            "alt": {
+            "imagePrompt": {
               "type": "objectAttribute",
               "value": {
                 "type": "string"
@@ -738,6 +738,13 @@
                     "value": {
                       "type": "inline",
                       "name": "sanity.imageCrop"
+                    },
+                    "optional": true
+                  },
+                  "promptField": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
                     },
                     "optional": true
                   },
@@ -1334,6 +1341,13 @@
                 "value": {
                   "type": "inline",
                   "name": "sanity.imageCrop"
+                },
+                "optional": true
+              },
+              "promptField": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
                 },
                 "optional": true
               },
