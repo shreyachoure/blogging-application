@@ -92,6 +92,7 @@ export type Post = {
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     imagePrompt?: string;
+    alt?: string;
     _type: "image";
   };
   categories?: Array<{
@@ -457,6 +458,7 @@ export type POSTS_QUERYResult = Array<{
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     imagePrompt?: string;
+    alt?: string;
     _type: "image";
   } | null;
   publishedAt: string | null;
@@ -531,6 +533,7 @@ export type POST_QUERYResult = {
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     imagePrompt?: string;
+    alt?: string;
     _type: "image";
   } | null;
   publishedAt: string | null;
@@ -573,6 +576,7 @@ export type POSTS_BY_CATEGORYResult = Array<{
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       imagePrompt?: string;
+      alt?: string;
       _type: "image";
     } | null;
     authors: Array<{

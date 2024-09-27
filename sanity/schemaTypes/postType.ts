@@ -30,11 +30,11 @@ export const postType = defineType({
 		// 		hotspot: true,
 		// 	},
 		// 	fields: [
-				// {
-				// 	name: "alt",
-				// 	type: "string",
-				// 	title: "Alternative text",
-				// },
+		// {
+		// 	name: "alt",
+		// 	type: "string",
+		// 	title: "Alternative text",
+		// },
 		// 	],
 		// }),
 		defineField({
@@ -46,6 +46,11 @@ export const postType = defineType({
 					name: "imagePrompt",
 					title: "Image prompt",
 				}),
+				{
+					name: "alt",
+					type: "string",
+					title: "Alternative Text",
+				},
 			],
 			options: {
 				aiAssist: {
