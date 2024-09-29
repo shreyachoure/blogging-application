@@ -23,20 +23,6 @@ export const postType = defineType({
 			type: "reference",
 			to: { type: "author" },
 		}),
-		// defineField({
-		// 	name: "mainImage",
-		// 	type: "image",
-		// 	options: {
-		// 		hotspot: true,
-		// 	},
-		// 	fields: [
-		// {
-		// 	name: "alt",
-		// 	type: "string",
-		// 	title: "Alternative text",
-		// },
-		// 	],
-		// }),
 		defineField({
 			type: "image",
 			name: "mainImage",
@@ -70,6 +56,11 @@ export const postType = defineType({
 		defineField({
 			name: "body",
 			type: "blockContent",
+		}),
+		defineField({
+			name: "publishToMedium",
+			type: "boolean",
+			title: "Publish to Medium",
 		}),
 	],
 	preview: {

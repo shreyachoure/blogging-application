@@ -134,6 +134,7 @@ export type Post = {
     _type: "image";
     _key: string;
   }>;
+  publishToMedium?: boolean;
 };
 
 export type Author = {

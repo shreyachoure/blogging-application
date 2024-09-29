@@ -786,6 +786,13 @@
           }
         },
         "optional": true
+      },
+      "publishToMedium": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
+        },
+        "optional": true
       }
     }
   },
