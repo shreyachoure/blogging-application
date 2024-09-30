@@ -22,14 +22,17 @@ export default async function Page({ params }: PostIndexProps) {
 	}
 
 	// Convert Portable Text to HTML
-	const postBodyHTML = post?.body ? toHTML(post.body, { components }) : "";
+	const postBodyHTML = post?.body ? toHTML(post.body) : "";
 
 	// Construct the main image URL
 	const mainImageUrl = post?.mainImage ? urlFor(post.mainImage).url() : null;
 
+	const authorImage = post?.author?.image
+		? urlFor(post.author.image).url() // Extract the image URL
+		: null;
+
 	return (
 		<main className="container mx-auto grid grid-cols-1 gap-6 p-12">
-			{/* Render main image if available */}
 			{mainImageUrl ? (
 				<Image
 					className="w-full aspect-[800/300] rounded"
@@ -54,10 +57,29 @@ export default async function Page({ params }: PostIndexProps) {
 				{/* Share to Medium component */}
 				<div className="my-4">
 					<ShareToMedium
-						title={post?.title || "Untitled"} // Use fallback if title is missing
-						body={postBodyHTML} // Use the converted HTML body
-						author={post?.author || { name: "Unknown" }} // Fallback author
-						mainImage={mainImageUrl} // Pass the extracted URL of the main image, or null if missing
+						title={post?.title || "Untitled"}
+						body={post?.body || []}
+						author={
+							post?.author
+								? {
+										name: post.author.name || "Unknown",
+										image: authorImage || null,
+									}
+								: { name: "Unknown", image: null }
+						}
+						mainImage={
+							mainImageUrl
+								? {
+										asset: {
+											_ref: mainImageUrl, // You need to provide the reference ID here, not the URL
+											_type: "reference",
+											// _weak is optional; include if needed
+										},
+										// You can also add optional properties like hotspot, crop, etc. if you have those values
+										_type: "image", // Ensure you include this type
+									}
+								: null
+						}
 					/>
 				</div>
 			</div>

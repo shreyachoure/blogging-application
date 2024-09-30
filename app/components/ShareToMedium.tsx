@@ -2,9 +2,28 @@
 import React from "react";
 import { FaMedium } from "react-icons/fa";
 import { POSTS_QUERYResult } from "@/sanity/types";
+import { urlFor } from "@/sanity/lib/image";
 
-const ShareToMedium = (props: POSTS_QUERYResult[0]) => {
+type ShareToMediumProps = {
+	title: string;
+	body: { children?: any[]; style?: string; _key: string }[]; // Adjust according to your needs
+	author: {
+		name: string;
+		image: string | null;
+	};
+	mainImage?: {
+		asset?: {
+			_ref: string;
+			_type: "reference";
+		};
+		_type: "image";
+	} | null;
+};
+
+const ShareToMedium = (props: ShareToMediumProps) => {
 	const { title, body, author, mainImage } = props;
+
+	// const mainImageUrl = mainImage ? urlFor(mainImage).url() : null;
 
 	const handleMediumShare = async () => {
 		try {

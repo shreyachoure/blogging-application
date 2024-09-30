@@ -57,11 +57,6 @@ export const postType = defineType({
 			name: "body",
 			type: "blockContent",
 		}),
-		defineField({
-			name: "publishToMedium",
-			type: "boolean",
-			title: "Publish to Medium",
-		}),
 	],
 	preview: {
 		select: {
