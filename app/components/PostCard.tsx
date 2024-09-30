@@ -5,7 +5,6 @@ import { PublishedAt } from "./PublishedAt";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
-import SocialMedia from "./SocialMedia";
 
 export function PostCard(props: POSTS_QUERYResult[0]) {
 	const { title, author, mainImage, publishedAt, categories } = props;
@@ -39,9 +38,7 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
 					</div>
 				</article>
 			</Link>
-			<div>
-				<SocialMedia />
-			</div>
+			
 		</>
 	);
 }

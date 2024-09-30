@@ -20,7 +20,6 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
 				</div>
 				<Title>{title}</Title>
 				<Author author={author} />
-				
 			</header>
 			{mainImage ? (
 				<figure className="lg:col-span-4 flex flex-col gap-2 items-start">
