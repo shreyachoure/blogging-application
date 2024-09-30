@@ -6,7 +6,7 @@ import { urlFor } from "@/sanity/lib/image";
 
 type ShareToMediumProps = {
 	title: string;
-	body: { children?: any[]; style?: string; _key: string }[]; // Adjust according to your needs
+	body: string; // Adjust according to your needs
 	author: {
 		name: string;
 		image: string | null;

@@ -58,7 +58,7 @@ export default async function Page({ params }: PostIndexProps) {
 				<div className="my-4">
 					<ShareToMedium
 						title={post?.title || "Untitled"}
-						body={post?.body || []}
+						body={postBodyHTML || "Not provided"}
 						author={
 							post?.author
 								? {
